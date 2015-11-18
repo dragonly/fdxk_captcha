@@ -6,15 +6,20 @@
     padding: [50, 20, 50, 20]
     spacing: 50
 
-    Image:
-      id: img1
-      source: 'xk.png'
-      allow_stretch: True
+    BoxLayout:
+      size: root.size
+      orientation: 'horizontal'
+      spacing: 50
 
-    Image:
-      id: img2
-      source: 'xk_split.png'
-      allow_stretch: True
+      Image:
+        id: img1
+        source: 'xk.png'
+        allow_stretch: True
+
+      Image:
+        id: img2
+        source: 'xk_split.png'
+        allow_stretch: True
 
     BoxLayout:
       orientation: 'horizontal'
@@ -36,9 +41,18 @@
         source: 'split_3.png'
         allow_stretch: True
 
-    TextInput:
-      id: text_input
-      font_size: 180
-      hint_text: 'hey bro'
-      multiline: False
-      on_text_validate: root.on_enter(self.text)
+    BoxLayout:
+      orientation: 'horizontal'
+
+      Label:
+        id: result
+        font_size: 120
+        text: 'WARRIOR GO!'
+
+      TextInput:
+        id: text_input
+        padding: [0, 20, 0, 0]
+        font_size: 250
+        hint_text: 'hey :)'
+        multiline: False
+        on_text_validate: root.on_enter(self.text)

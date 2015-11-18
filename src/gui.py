@@ -9,6 +9,7 @@ import os
 import shutil
 import uuid
 import xk
+import random
 # print(os.path.dirname(os.path.abspath(__file__)))
 
 class MainView(Widget):
@@ -45,11 +46,15 @@ class MainView(Widget):
 
     def on_enter(self, text):
         print(text)
+        self.ids.result.color = (random.random(), random.random(), random.random(), random.random() * 0.4 + 0.6)
+        self.ids.result.text = 'CHECKING'
         if self.is_valid_input():
             print('CORRECT')
+            self.ids.result.text = 'CORRECT'
             self.save_input()
         else:
             print('WRONG!!!!!')
+            self.ids.result.text = 'WRONG!'
         print('*'*80)
         Clock.schedule_once(self.re_focus)
         self.get_images()
