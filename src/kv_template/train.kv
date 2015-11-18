@@ -1,0 +1,44 @@
+<MainView>:
+
+  BoxLayout:
+    size: root.size
+    orientation: 'vertical'
+    padding: [50, 20, 50, 20]
+    spacing: 50
+
+    Image:
+      id: img1
+      source: 'xk.png'
+      allow_stretch: True
+
+    Image:
+      id: img2
+      source: 'xk_split.png'
+      allow_stretch: True
+
+    BoxLayout:
+      orientation: 'horizontal'
+
+      Image:
+        id: img3
+        source: 'split_0.png'
+        allow_stretch: True
+      Image:
+        id: img4
+        source: 'split_1.png'
+        allow_stretch: True
+      Image:
+        id: img5
+        source: 'split_2.png'
+        allow_stretch: True
+      Image:
+        id: img6
+        source: 'split_3.png'
+        allow_stretch: True
+
+    TextInput:
+      id: text_input
+      font_size: 180
+      hint_text: 'hey bro'
+      multiline: False
+      on_text_validate: root.on_enter(self.text)
